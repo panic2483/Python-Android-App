@@ -21,7 +21,8 @@ class Calculator(BoxLayout):
         )
 
         self.add_widget(self.result)
-
+        
+        #Buttons der App, jede Reihe = Reihe in der App
         buttons = [
             ["C", "+/-", "%", "/"],
             ["7", "8", "9", "*"],
@@ -30,17 +31,17 @@ class Calculator(BoxLayout):
             ["0", "00", ".", "="]
         ]
 
-        grid = GridLayout(cols = 4, spacing = 5, padding = 10)
-        for row in buttons:
-            for item in row:
+        grid = GridLayout(cols = 4, spacing = 5, padding = 10) #Cols = 4 = 4 Reihen im Grid
+        for row in buttons: #Fügt automatisch die Texte aus "buttons" den Buttons der App hinzu
+            for item in row: 
                 button = Button(
                     text = item,
                     font_size = 32,
 
                 )
-                grid.add_widget(button)
+                grid.add_widget(button) #Erstellt die Buttons
         
-        self.add_widget(grid)
+        self.add_widget(grid) #Erstellt das Grid (mit den Buttons)
 
 
 class CalculatorApp(App):
